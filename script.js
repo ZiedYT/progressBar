@@ -58,10 +58,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 current=current + 1;
             }
             var pcent = Math.floor((current*100)/bags)
-            if(pcent>100)
-                pcent=100;
-            element.style.width = pcent+"%"
-            element.textContent = pcent+"%"
+            if(pcent>=100){
+              pcent=100;
+              element.style.width = "99%"
+              element.textContent = "100%" 
+            }
+            else{
+              element.style.width = pcent+"%"
+              element.textContent = pcent+"%"              
+            }
+
         }
       }
     //   console.log(context)
